@@ -2,7 +2,7 @@
   "_id": "gZiUvbXWLs0pOp0c",
   "name": "Паладин",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/paladin.webp",
   "system": {
     "description": {
       "value": "<p>Святой воин, связанный священной клятвой и божественной силой.</p><p><strong>Кость Хитов:</strong> 1к10 за уровень.</p>",
@@ -297,7 +297,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
