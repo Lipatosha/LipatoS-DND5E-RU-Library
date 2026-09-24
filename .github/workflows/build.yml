@@ -6,7 +6,8 @@ on:
     branches:
       - main
     paths:
-      - "source/**"
+      - "assets/**"
+      - "scripts/**"
       - "tools/**"
       - "module.json"
       - "package.json"
@@ -18,7 +19,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 75
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,7 +33,30 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Build compendium
+      - name: Fetch pinned Laaru source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p vendor
+          URL=$(node -p "require('./tools/laaru-source.json').download")
+          SHA=$(node -p "require('./tools/laaru-source.json').sha256")
+          curl -fL --retry 3 --retry-delay 5 "$URL" -o vendor/laaru.zip
+          echo "$SHA  vendor/laaru.zip" | sha256sum -c -
+
+          set +e
+          unzip -oq vendor/laaru.zip -d vendor
+          CODE=$?
+          set -e
+          if [ "$CODE" -gt 1 ]; then
+            echo "unzip failed with code $CODE"
+            exit "$CODE"
+          fi
+
+          test -f vendor/laaru-dnd5-hw/module.json
+
+      - name: Build mirrored compendiums
+        env:
+          LAARU_SOURCE_ROOT: \${{ github.workspace }}/vendor/laaru-dnd5-hw
         run: npm run build
 
       - name: Create Foundry ZIP
@@ -40,8 +65,9 @@ jobs:
           set -euo pipefail
           mkdir -p dist
           cd build
-          zip -qr ../dist/lipatos-dnd5e-ru-library.zip lipatos-dnd5e-ru-library
+          zip -0 -qr ../dist/lipatos-dnd5e-ru-library.zip lipatos-dnd5e-ru-library
           cp lipatos-dnd5e-ru-library/module.json ../dist/module.json
+          cp lipatos-dnd5e-ru-library/build-report.json ../dist/build-report.json
 
       - name: Validate release
         shell: bash
@@ -50,29 +76,28 @@ jobs:
           node -e '
             const m=require("./dist/module.json");
             if(m.id!=="lipatos-dnd5e-ru-library") throw new Error("wrong module id");
+            if(m.version!=="1.0.0") throw new Error("wrong version");
             if(m.compatibility?.verified!=="14") throw new Error("wrong Foundry version");
             const s=(m.relationships?.systems||[]).find(x=>x.id==="dnd5e");
             if(s?.compatibility?.verified!=="6.0.5") throw new Error("wrong dnd5e version");
+            const required=["classes","subclasses","classfeatures","races","racesMPMM","backgrounds","spells","items","goods","monsters","monsters2","intro","list","tables","tables-extra","macro","actions","conditions"];
+            const names=new Set((m.packs||[]).map(p=>p.name));
+            for(const n of required) if(!names.has(n)) throw new Error("missing pack "+n);
           '
           unzip -tq dist/lipatos-dnd5e-ru-library.zip
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: lipatos-dnd5e-ru-library
-          compression-level: 0
-          path: |
-            dist/lipatos-dnd5e-ru-library.zip
-            dist/module.json
-          if-no-files-found: error
-
       - name: Publish release
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: \${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
           VERSION=$(node -p "require('./dist/module.json').version")
           TAG="v$VERSION"
           gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "$TAG"             dist/lipatos-dnd5e-ru-library.zip             dist/module.json             --title "LipatoS — DND5E RU Library v$VERSION"             --notes "Этап 1: 13 классов D&D 5e Legacy 2014 для Foundry VTT 14 / D&D5e 6.0.5. Иконки пока не добавлены."
+          gh release create "$TAG" \
+            dist/lipatos-dnd5e-ru-library.zip \
+            dist/module.json \
+            dist/build-report.json \
+            --title "LipatoS — DND5E RU Library v$VERSION" \
+            --notes "Полная базовая пересборка библиотеки из данных Laaru DnD14 v3.72.5. Внутренние UUID и пути перенесены на LipatoS; Laaru как установленный модуль не требуется."
