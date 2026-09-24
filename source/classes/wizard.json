@@ -1,0 +1,261 @@
+{
+  "_id": "wZK2Q0rXB0AQo8h3",
+  "name": "Волшебник",
+  "type": "class",
+  "img": null,
+  "system": {
+    "description": {
+      "value": "<p>Учёный заклинатель, изучающий магию и манипулирующий её законами.</p><p><strong>Кость Хитов:</strong> 1к6 за уровень.</p>",
+      "chat": ""
+    },
+    "source": {
+      "book": "PHB",
+      "page": "112",
+      "custom": "",
+      "license": "",
+      "revision": 1,
+      "rules": "2014"
+    },
+    "identifier": "wizard",
+    "hd": {
+      "additional": "",
+      "denomination": "d6",
+      "spent": 0
+    },
+    "levels": 1,
+    "primaryAbility": {
+      "value": [
+        "int"
+      ],
+      "all": true
+    },
+    "properties": [],
+    "spellcasting": {
+      "progression": "full",
+      "ability": "int",
+      "preparation": {
+        "formula": "@abilities.int.mod + @classes.wizard.levels"
+      }
+    },
+    "advancement": {
+      "wizardhpuca1he00": {
+        "_id": "wizardhpuca1he00",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {},
+        "title": "Хиты"
+      },
+      "wizardwe1ifkt170": {
+        "_id": "wizardwe1ifkt170",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim:dagger",
+            "weapon:sim:dart",
+            "weapon:sim:lightcrossbow",
+            "weapon:sim:quarterstaff",
+            "weapon:sim:sling"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Оружие",
+        "classRestriction": "primary"
+      },
+      "wizardsajfheek00": {
+        "_id": "wizardsajfheek00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:int",
+            "saves:wis"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Спасброски",
+        "classRestriction": "primary"
+      },
+      "wizardsk94hwig00": {
+        "_id": "wizardsk94hwig00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:arc",
+                "skills:his",
+                "skills:ins",
+                "skills:inv",
+                "skills:med",
+                "skills:rel"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Навыки",
+        "classRestriction": "primary"
+      },
+      "wizardasv0afyj00": {
+        "_id": "wizardasv0afyj00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 4,
+        "title": "Увеличение характеристик"
+      },
+      "wizardastwc16n00": {
+        "_id": "wizardastwc16n00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 8,
+        "title": "Увеличение характеристик"
+      },
+      "wizardas1p4ottu0": {
+        "_id": "wizardas1p4ottu0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 12,
+        "title": "Увеличение характеристик"
+      },
+      "wizardas1o0qf1y0": {
+        "_id": "wizardas1o0qf1y0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 16,
+        "title": "Увеличение характеристик"
+      },
+      "wizardas1r2m1on0": {
+        "_id": "wizardas1r2m1on0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 19,
+        "title": "Увеличение характеристик"
+      },
+      "wizardsuiarx6800": {
+        "_id": "wizardsuiarx6800",
+        "type": "Subclass",
+        "configuration": {},
+        "value": {
+          "document": null,
+          "uuid": null
+        },
+        "level": 2,
+        "title": "Магическая традиция"
+      }
+    },
+    "startingEquipment": [],
+    "wealth": "4d4 * 10"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lipatos": {
+      "iconPending": true,
+      "stage": "classes-base",
+      "verifiedAgainstUploadedBooks": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14",
+    "systemId": "dnd5e",
+    "systemVersion": "6.0.5",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}
