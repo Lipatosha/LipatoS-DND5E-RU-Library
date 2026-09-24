@@ -2,7 +2,7 @@
   "_id": "6T08zzKtmmpVwlXU",
   "name": "Чародей",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/sorcerer.webp",
   "system": {
     "description": {
       "value": "<p>Заклинатель, чья магия является врождённым даром или наследием.</p><p><strong>Кость Хитов:</strong> 1к6 за уровень.</p>",
@@ -242,7 +242,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
