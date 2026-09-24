@@ -2,7 +2,7 @@
   "_id": "ILvRZGEx3aXqSVUt",
   "name": "Бард",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/bard.webp",
   "system": {
     "description": {
       "value": "<p>Вдохновляющий заклинатель, черпающий силу в музыке, слове и мастерстве.</p><p><strong>Кость Хитов:</strong> 1к8 за уровень.</p>",
@@ -367,7 +367,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
