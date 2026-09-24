@@ -1,0 +1,78 @@
+name: Build RU Library
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "source/**"
+      - "tools/**"
+      - "module.json"
+      - "package.json"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build compendium
+        run: npm run build
+
+      - name: Create Foundry ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cd build
+          zip -qr ../dist/lipatos-dnd5e-ru-library.zip lipatos-dnd5e-ru-library
+          cp lipatos-dnd5e-ru-library/module.json ../dist/module.json
+
+      - name: Validate release
+        shell: bash
+        run: |
+          set -euo pipefail
+          node -e '
+            const m=require("./dist/module.json");
+            if(m.id!=="lipatos-dnd5e-ru-library") throw new Error("wrong module id");
+            if(m.compatibility?.verified!=="14") throw new Error("wrong Foundry version");
+            const s=(m.relationships?.systems||[]).find(x=>x.id==="dnd5e");
+            if(s?.compatibility?.verified!=="6.0.5") throw new Error("wrong dnd5e version");
+          '
+          unzip -tq dist/lipatos-dnd5e-ru-library.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lipatos-dnd5e-ru-library
+          compression-level: 0
+          path: |
+            dist/lipatos-dnd5e-ru-library.zip
+            dist/module.json
+          if-no-files-found: error
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION=$(node -p "require('./dist/module.json').version")
+          TAG="v$VERSION"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG"             dist/lipatos-dnd5e-ru-library.zip             dist/module.json             --title "LipatoS — DND5E RU Library v$VERSION"             --notes "Этап 1: 13 классов D&D 5e Legacy 2014 для Foundry VTT 14 / D&D5e 6.0.5. Иконки пока не добавлены."
