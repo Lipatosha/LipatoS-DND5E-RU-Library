@@ -1,0 +1,434 @@
+{
+  "_id": "xEb8jmA5HlNs7xTF",
+  "name": "Плут",
+  "type": "class",
+  "img": null,
+  "system": {
+    "description": {
+      "value": "<p>Ловкий специалист, использующий хитрость, точность и мастерство навыков.</p><p><strong>Кость Хитов:</strong> 1к8 за уровень.</p>",
+      "chat": ""
+    },
+    "source": {
+      "book": "PHB",
+      "page": "94",
+      "custom": "",
+      "license": "",
+      "revision": 1,
+      "rules": "2014"
+    },
+    "identifier": "rogue",
+    "hd": {
+      "additional": "",
+      "denomination": "d8",
+      "spent": 0
+    },
+    "levels": 1,
+    "primaryAbility": {
+      "value": [
+        "dex"
+      ],
+      "all": true
+    },
+    "properties": [],
+    "spellcasting": {
+      "progression": "none",
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
+    },
+    "advancement": {
+      "roguehpe1uf0d000": {
+        "_id": "roguehpe1uf0d000",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {},
+        "title": "Хиты"
+      },
+      "roguearmbdyob000": {
+        "_id": "roguearmbdyob000",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "armor:lgt"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Доспехи"
+      },
+      "roguewea16mkbwu0": {
+        "_id": "roguewea16mkbwu0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim",
+            "weapon:mar:handcrossbow",
+            "weapon:mar:longsword",
+            "weapon:mar:rapier",
+            "weapon:mar:shortsword"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Оружие",
+        "classRestriction": "primary"
+      },
+      "roguetoo1pjy1wk0": {
+        "_id": "roguetoo1pjy1wk0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "tool:thief"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Воровские инструменты"
+      },
+      "roguesav2z334p00": {
+        "_id": "roguesav2z334p00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:dex",
+            "saves:int"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Спасброски",
+        "classRestriction": "primary"
+      },
+      "rogueskia53r6v00": {
+        "_id": "rogueskia53r6v00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 4,
+              "pool": [
+                "skills:acr",
+                "skills:ath",
+                "skills:dec",
+                "skills:ins",
+                "skills:itm",
+                "skills:inv",
+                "skills:prc",
+                "skills:prf",
+                "skills:per",
+                "skills:slt",
+                "skills:ste"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Навыки",
+        "classRestriction": "primary"
+      },
+      "rogueexpap8z0v00": {
+        "_id": "rogueexpap8z0v00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "expertise",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "tool:thief",
+                "skills:*"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Компетентность"
+      },
+      "rogueexp9va5xy00": {
+        "_id": "rogueexp9va5xy00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "expertise",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:*",
+                "tool:thief"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 6,
+        "title": "Компетентность"
+      },
+      "roguesec1kmrwmx0": {
+        "_id": "roguesec1kmrwmx0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "skills:acr",
+                "skills:ath",
+                "skills:dec",
+                "skills:ins",
+                "skills:itm",
+                "skills:inv",
+                "skills:prc",
+                "skills:prf",
+                "skills:per",
+                "skills:slt",
+                "skills:ste"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Мультиклассирование",
+        "classRestriction": "secondary"
+      },
+      "roguecanl88e2j00": {
+        "_id": "roguecanl88e2j00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "languages:cant"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Воровской жаргон"
+      },
+      "roguewsaqga4r000": {
+        "_id": "roguewsaqga4r000",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:wis"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 15,
+        "title": "Скользкий ум"
+      },
+      "rogueasipafxc000": {
+        "_id": "rogueasipafxc000",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 4,
+        "title": "Увеличение характеристик"
+      },
+      "rogueasi415o9000": {
+        "_id": "rogueasi415o9000",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 8,
+        "title": "Увеличение характеристик"
+      },
+      "rogueasi1b9yehp0": {
+        "_id": "rogueasi1b9yehp0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 10,
+        "title": "Увеличение характеристик"
+      },
+      "rogueasi1apz73r0": {
+        "_id": "rogueasi1apz73r0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 12,
+        "title": "Увеличение характеристик"
+      },
+      "rogueasi19m0sbv0": {
+        "_id": "rogueasi19m0sbv0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 16,
+        "title": "Увеличение характеристик"
+      },
+      "rogueasi18s1z8y0": {
+        "_id": "rogueasi18s1z8y0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 19,
+        "title": "Увеличение характеристик"
+      },
+      "roguesub1ipngg70": {
+        "_id": "roguesub1ipngg70",
+        "type": "Subclass",
+        "configuration": {},
+        "value": {
+          "document": null,
+          "uuid": null
+        },
+        "level": 3,
+        "title": "Плутовской архетип"
+      }
+    },
+    "startingEquipment": [],
+    "wealth": "4d4 * 10"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lipatos": {
+      "iconPending": true,
+      "stage": "classes-base",
+      "verifiedAgainstUploadedBooks": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14",
+    "systemId": "dnd5e",
+    "systemVersion": "6.0.5",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}
