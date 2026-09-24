@@ -2,7 +2,7 @@
   "_id": "pvEzGSv71zBhaolc",
   "name": "Варвар",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/barbarian.webp",
   "system": {
     "description": {
       "value": "<p>Свирепый воин, превращающий ярость в силу и стойкость.</p><p><strong>Кость Хитов:</strong> 1к12 за уровень.</p>",
@@ -276,7 +276,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
