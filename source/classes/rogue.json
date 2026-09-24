@@ -2,7 +2,7 @@
   "_id": "xEb8jmA5HlNs7xTF",
   "name": "Плут",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/rogue.webp",
   "system": {
     "description": {
       "value": "<p>Ловкий специалист, использующий хитрость, точность и мастерство навыков.</p><p><strong>Кость Хитов:</strong> 1к8 за уровень.</p>",
@@ -415,7 +415,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
