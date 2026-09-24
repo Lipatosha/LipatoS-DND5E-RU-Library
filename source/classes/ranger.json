@@ -1,0 +1,309 @@
+{
+  "_id": "VkRQ7glQvTWWiOCS",
+  "name": "Следопыт",
+  "type": "class",
+  "img": null,
+  "system": {
+    "description": {
+      "value": "<p>Воитель, соединяющий боевое мастерство с магией природы.</p><p><strong>Кость Хитов:</strong> 1к10 за уровень.</p>",
+      "chat": ""
+    },
+    "source": {
+      "book": "PHB",
+      "page": "89",
+      "custom": "",
+      "license": "",
+      "revision": 1,
+      "rules": "2014"
+    },
+    "identifier": "ranger",
+    "hd": {
+      "additional": "",
+      "denomination": "d10",
+      "spent": 0
+    },
+    "levels": 1,
+    "primaryAbility": {
+      "value": [
+        "dex",
+        "wis"
+      ],
+      "all": true
+    },
+    "properties": [],
+    "spellcasting": {
+      "progression": "half",
+      "ability": "wis",
+      "preparation": {
+        "formula": ""
+      }
+    },
+    "advancement": {
+      "rangerhp1dfxxvc0": {
+        "_id": "rangerhp1dfxxvc0",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {},
+        "title": "Хиты"
+      },
+      "rangerarf4kix300": {
+        "_id": "rangerarf4kix300",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "armor:lgt",
+            "armor:med",
+            "armor:shl"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Доспехи"
+      },
+      "rangerwe57t5vp00": {
+        "_id": "rangerwe57t5vp00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim",
+            "weapon:mar"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Оружие"
+      },
+      "rangersa1m0t0bu0": {
+        "_id": "rangersa1m0t0bu0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:str",
+            "saves:dex"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Спасброски",
+        "classRestriction": "primary"
+      },
+      "rangersk1jsuctm0": {
+        "_id": "rangersk1jsuctm0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 3,
+              "pool": [
+                "skills:ani",
+                "skills:ath",
+                "skills:ins",
+                "skills:inv",
+                "skills:nat",
+                "skills:prc",
+                "skills:ste",
+                "skills:sur"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Навыки",
+        "classRestriction": "primary"
+      },
+      "rangersej1f0gy00": {
+        "_id": "rangersej1f0gy00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "skills:ani",
+                "skills:ath",
+                "skills:ins",
+                "skills:inv",
+                "skills:nat",
+                "skills:prc",
+                "skills:ste",
+                "skills:sur"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Мультиклассирование",
+        "classRestriction": "secondary"
+      },
+      "rangeraslvpf6500": {
+        "_id": "rangeraslvpf6500",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 4,
+        "title": "Увеличение характеристик"
+      },
+      "rangerasiju6uh00": {
+        "_id": "rangerasiju6uh00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 8,
+        "title": "Увеличение характеристик"
+      },
+      "rangerasr0foyc00": {
+        "_id": "rangerasr0foyc00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 12,
+        "title": "Увеличение характеристик"
+      },
+      "rangeraspwha6g00": {
+        "_id": "rangeraspwha6g00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 16,
+        "title": "Увеличение характеристик"
+      },
+      "rangeraspmhohh00": {
+        "_id": "rangeraspmhohh00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 19,
+        "title": "Увеличение характеристик"
+      },
+      "rangersu1wmo3o20": {
+        "_id": "rangersu1wmo3o20",
+        "type": "Subclass",
+        "configuration": {},
+        "value": {
+          "document": null,
+          "uuid": null
+        },
+        "level": 3,
+        "title": "Архетип следопыта"
+      }
+    },
+    "startingEquipment": [],
+    "wealth": "5d4 * 10"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lipatos": {
+      "iconPending": true,
+      "stage": "classes-base",
+      "verifiedAgainstUploadedBooks": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14",
+    "systemId": "dnd5e",
+    "systemVersion": "6.0.5",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}
