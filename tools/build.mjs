@@ -9,7 +9,8 @@ const packDir = path.join(buildRoot, "packs", "classes");
 
 await fs.rm(path.join(cwd, "build"), { recursive: true, force: true });
 await fs.mkdir(packDir, { recursive: true });
-await fs.copyFile(path.join(cwd, "module.json"), path.join(buildRoot, "module.json"));\nawait fs.cp(path.join(cwd, "assets"), path.join(buildRoot, "assets"), { recursive: true });
+await fs.copyFile(path.join(cwd, "module.json"), path.join(buildRoot, "module.json"));
+await fs.cp(path.join(cwd, "assets"), path.join(buildRoot, "assets"), { recursive: true });
 
 const filenames = (await fs.readdir(sourceDir)).filter(f => f.endsWith(".json")).sort();
 if (filenames.length !== 13) throw new Error(`Ожидалось 13 классов, найдено ${filenames.length}`);
@@ -28,6 +29,8 @@ for (const filename of filenames) {
     throw new Error(`${filename}: отсутствует или повторяется system.identifier`);
   }
   if (!String(document.img || "").startsWith("modules/lipatos-dnd5e-ru-library/assets/icons/classes/")) throw new Error(`${filename}: отсутствует иконка класса`);
+  const iconFile = path.join(cwd, document.img.replace("modules/lipatos-dnd5e-ru-library/", ""));
+  await fs.access(iconFile);
   if (document.system?.source?.rules !== "2014") throw new Error(`${filename}: ожидаются правила 2014`);
   if (document._stats?.systemVersion !== "6.0.5") throw new Error(`${filename}: неверная версия D&D5e`);
 
