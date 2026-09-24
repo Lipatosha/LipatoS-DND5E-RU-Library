@@ -101,9 +101,9 @@ for (const pack of sourceManifest.packs ?? []) {
     if (String(key).startsWith("!items!") && value?.type === "class") {
       const icon = customClassIcons.get(value.system?.identifier);
       if (icon) {
-        const rel = \`assets/icons/classes/\${icon}\`;
+        const rel = `assets/icons/classes/${icon}`;
         await fs.access(path.join(buildRoot, rel));
-        value.img = \`modules/\${PACKAGE_ID}/\${rel}\`;
+        value.img = `modules/${PACKAGE_ID}/${rel}`;
       }
     }
 
@@ -122,7 +122,7 @@ for (const pack of sourceManifest.packs ?? []) {
   await targetDb.close();
 
   report[pack.name] = { records: count };
-  console.log(\`[\${pack.name}] \${count} записей перенесено из Laaru\`);
+  console.log(`[${pack.name}] ${count} записей перенесено из Laaru`);
 }
 
 const manifest = rewriteValue(sourceManifest);
@@ -171,7 +171,7 @@ const requiredPacks = [
 ];
 const actualPacks = new Set((manifest.packs ?? []).map(p => p.name));
 for (const name of requiredPacks) {
-  if (!actualPacks.has(name)) throw new Error(\`В сборке отсутствует пакет \${name}\`);
+  if (!actualPacks.has(name)) throw new Error(`В сборке отсутствует пакет ${name}`);
 }
 
-console.log(\`Готово: полная база Laaru \${sourceManifest.version} собрана как \${PACKAGE_ID} \${manifest.version}\`);
+console.log(`Готово: полная база Laaru ${sourceManifest.version} собрана как ${PACKAGE_ID} ${manifest.version}`);
