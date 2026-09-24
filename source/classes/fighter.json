@@ -2,7 +2,7 @@
   "_id": "ABEBgWyRhVlDUIfq",
   "name": "Воин",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/fighter.webp",
   "system": {
     "description": {
       "value": "<p>Мастер сражения, одинаково уверенно владеющий оружием, доспехами и боевой тактикой.</p><p><strong>Кость Хитов:</strong> 1к10 за уровень.</p>",
@@ -324,7 +324,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
