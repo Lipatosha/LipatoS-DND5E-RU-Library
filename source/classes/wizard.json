@@ -2,7 +2,7 @@
   "_id": "wZK2Q0rXB0AQo8h3",
   "name": "Волшебник",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/wizard.webp",
   "system": {
     "description": {
       "value": "<p>Учёный заклинатель, изучающий магию и манипулирующий её законами.</p><p><strong>Кость Хитов:</strong> 1к6 за уровень.</p>",
@@ -242,7 +242,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
