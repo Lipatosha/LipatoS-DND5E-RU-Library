@@ -1,0 +1,261 @@
+{
+  "_id": "6T08zzKtmmpVwlXU",
+  "name": "Чародей",
+  "type": "class",
+  "img": null,
+  "system": {
+    "description": {
+      "value": "<p>Заклинатель, чья магия является врождённым даром или наследием.</p><p><strong>Кость Хитов:</strong> 1к6 за уровень.</p>",
+      "chat": ""
+    },
+    "source": {
+      "book": "PHB",
+      "page": "99",
+      "custom": "",
+      "license": "",
+      "revision": 1,
+      "rules": "2014"
+    },
+    "identifier": "sorcerer",
+    "hd": {
+      "additional": "",
+      "denomination": "d6",
+      "spent": 0
+    },
+    "levels": 1,
+    "primaryAbility": {
+      "value": [
+        "cha"
+      ],
+      "all": true
+    },
+    "properties": [],
+    "spellcasting": {
+      "progression": "full",
+      "ability": "cha",
+      "preparation": {
+        "formula": ""
+      }
+    },
+    "advancement": {
+      "sorcerer7j1hyw00": {
+        "_id": "sorcerer7j1hyw00",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {},
+        "title": "Хиты"
+      },
+      "sorcererz8c1vp00": {
+        "_id": "sorcererz8c1vp00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim:dagger",
+            "weapon:sim:dart",
+            "weapon:sim:lightcrossbow",
+            "weapon:sim:quarterstaff",
+            "weapon:sim:sling"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Оружие",
+        "classRestriction": "primary"
+      },
+      "sorcerer1qaqfze0": {
+        "_id": "sorcerer1qaqfze0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:con",
+            "saves:cha"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Спасброски",
+        "classRestriction": "primary"
+      },
+      "sorcerer12ov94a0": {
+        "_id": "sorcerer12ov94a0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:arc",
+                "skills:dec",
+                "skills:ins",
+                "skills:itm",
+                "skills:per",
+                "skills:rel"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Навыки",
+        "classRestriction": "primary"
+      },
+      "sorcerer1ysvn9p0": {
+        "_id": "sorcerer1ysvn9p0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 4,
+        "title": "Увеличение характеристик"
+      },
+      "sorcerer1vh0ey10": {
+        "_id": "sorcerer1vh0ey10",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 8,
+        "title": "Увеличение характеристик"
+      },
+      "sorcerervad4lw00": {
+        "_id": "sorcerervad4lw00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 12,
+        "title": "Увеличение характеристик"
+      },
+      "sorcereru6epu000": {
+        "_id": "sorcereru6epu000",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 16,
+        "title": "Увеличение характеристик"
+      },
+      "sorcerertwf45100": {
+        "_id": "sorcerertwf45100",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 19,
+        "title": "Увеличение характеристик"
+      },
+      "sorcerer1hqeyvm0": {
+        "_id": "sorcerer1hqeyvm0",
+        "type": "Subclass",
+        "configuration": {},
+        "value": {
+          "document": null,
+          "uuid": null
+        },
+        "level": 1,
+        "title": "Происхождение чародея"
+      }
+    },
+    "startingEquipment": [],
+    "wealth": "3d4 * 10"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lipatos": {
+      "iconPending": true,
+      "stage": "classes-base",
+      "verifiedAgainstUploadedBooks": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14",
+    "systemId": "dnd5e",
+    "systemVersion": "6.0.5",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}
