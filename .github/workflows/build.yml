@@ -79,7 +79,7 @@ jobs:
           node -e '
             const m=require("./dist/module.json");
             if(m.id!=="lipatos-dnd5e-ru-library") throw new Error("wrong module id");
-            const expected=require("./module.json").version;\n            if(m.version!==expected) throw new Error(`wrong version: ${m.version} != ${expected}`);
+            const expected=require("./module.json").version; if(m.version!==expected) throw new Error(`wrong version: ${m.version} != ${expected}`);
             if(m.compatibility?.verified!=="14") throw new Error("wrong Foundry version");
             const s=(m.relationships?.systems||[]).find(x=>x.id==="dnd5e");
             if(s?.compatibility?.verified!=="6.0.5") throw new Error("wrong dnd5e version");
