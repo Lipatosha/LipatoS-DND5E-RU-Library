@@ -1,0 +1,274 @@
+{
+  "_id": "7WJp9vhi6F6SlAFa",
+  "name": "Колдун",
+  "type": "class",
+  "img": null,
+  "system": {
+    "description": {
+      "value": "<p>Заклинатель, получивший магическую силу через договор с потусторонней сущностью.</p><p><strong>Кость Хитов:</strong> 1к8 за уровень.</p>",
+      "chat": ""
+    },
+    "source": {
+      "book": "PHB",
+      "page": "105",
+      "custom": "",
+      "license": "",
+      "revision": 1,
+      "rules": "2014"
+    },
+    "identifier": "warlock",
+    "hd": {
+      "additional": "",
+      "denomination": "d8",
+      "spent": 0
+    },
+    "levels": 1,
+    "primaryAbility": {
+      "value": [
+        "cha"
+      ],
+      "all": true
+    },
+    "properties": [],
+    "spellcasting": {
+      "progression": "pact",
+      "ability": "cha",
+      "preparation": {
+        "formula": ""
+      }
+    },
+    "advancement": {
+      "warlockhlgvtnu00": {
+        "_id": "warlockhlgvtnu00",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {},
+        "title": "Хиты"
+      },
+      "warlockak347hl00": {
+        "_id": "warlockak347hl00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "armor:lgt"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Доспехи"
+      },
+      "warlockwbbildv00": {
+        "_id": "warlockwbbildv00",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Оружие"
+      },
+      "warlocks1p3ffas0": {
+        "_id": "warlocks1p3ffas0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:wis",
+            "saves:cha"
+          ],
+          "choices": []
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Спасброски",
+        "classRestriction": "primary"
+      },
+      "warlocks1rb0zhs0": {
+        "_id": "warlocks1rb0zhs0",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:arc",
+                "skills:dec",
+                "skills:his",
+                "skills:itm",
+                "skills:inv",
+                "skills:nat",
+                "skills:rel"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 1,
+        "title": "Навыки",
+        "classRestriction": "primary"
+      },
+      "warlocka1w6rt4j0": {
+        "_id": "warlocka1w6rt4j0",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 4,
+        "title": "Увеличение характеристик"
+      },
+      "warlockahizh3000": {
+        "_id": "warlockahizh3000",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 8,
+        "title": "Увеличение характеристик"
+      },
+      "warlockawratmi00": {
+        "_id": "warlockawratmi00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 12,
+        "title": "Увеличение характеристик"
+      },
+      "warlockavnceum00": {
+        "_id": "warlockavnceum00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 16,
+        "title": "Увеличение характеристик"
+      },
+      "warlockau9eedr00": {
+        "_id": "warlockau9eedr00",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2,
+          "locked": [],
+          "recommendation": null
+        },
+        "value": {},
+        "level": 19,
+        "title": "Увеличение характеристик"
+      },
+      "warlocks8pmfa000": {
+        "_id": "warlocks8pmfa000",
+        "type": "Subclass",
+        "configuration": {},
+        "value": {
+          "document": null,
+          "uuid": null
+        },
+        "level": 1,
+        "title": "Потусторонний покровитель"
+      }
+    },
+    "startingEquipment": [],
+    "wealth": "4d4 * 10"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "lipatos": {
+      "iconPending": true,
+      "stage": "classes-base",
+      "verifiedAgainstUploadedBooks": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14",
+    "systemId": "dnd5e",
+    "systemVersion": "6.0.5",
+    "createdTime": 0,
+    "modifiedTime": 0,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}
