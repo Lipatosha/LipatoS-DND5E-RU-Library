@@ -2,7 +2,7 @@
   "_id": "VkRQ7glQvTWWiOCS",
   "name": "Следопыт",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/ranger.webp",
   "system": {
     "description": {
       "value": "<p>Воитель, соединяющий боевое мастерство с магией природы.</p><p><strong>Кость Хитов:</strong> 1к10 за уровень.</p>",
@@ -290,7 +290,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
