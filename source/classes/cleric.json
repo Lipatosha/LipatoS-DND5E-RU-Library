@@ -2,7 +2,7 @@
   "_id": "tlwBnN8GmqJcTgub",
   "name": "Жрец",
   "type": "class",
-  "img": null,
+  "img": "modules/lipatos-dnd5e-ru-library/assets/icons/classes/cleric.webp",
   "system": {
     "description": {
       "value": "<p>Священнослужитель, владеющий божественной магией и служащий высшим силам.</p><p><strong>Кость Хитов:</strong> 1к8 за уровень.</p>",
@@ -256,7 +256,7 @@
   },
   "flags": {
     "lipatos": {
-      "iconPending": true,
+      "iconPending": false,
       "stage": "classes-base",
       "verifiedAgainstUploadedBooks": true
     }
