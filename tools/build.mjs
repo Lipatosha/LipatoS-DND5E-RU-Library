@@ -13,7 +13,7 @@ const buildRoot = path.join(cwd, "build", PACKAGE_ID);
 const rootManifest = JSON.parse(await fs.readFile(path.join(cwd, "module.json"), "utf8"));
 const sourceManifest = JSON.parse(await fs.readFile(path.join(sourceRoot, "module.json"), "utf8"));
 
-const customClassIcons = new Map(Object.entries({
+const customClassPictures = new Map(Object.entries({
   artificer: "artificer.webp",
   barbarian: "barbarian.webp",
   bard: "bard.webp",
@@ -99,9 +99,9 @@ for (const pack of sourceManifest.packs ?? []) {
     const value = rewriteValue(sourceValue);
 
     if (String(key).startsWith("!items!") && value?.type === "class") {
-      const icon = customClassIcons.get(value.system?.identifier);
+      const icon = customClassPictures.get(value.system?.identifier);
       if (icon) {
-        const rel = `assets/icons/classes/${icon}`;
+        const rel = `assets/images/pic/${icon}`;
         await fs.access(path.join(buildRoot, rel));
         value.img = `modules/${PACKAGE_ID}/${rel}`;
       }
