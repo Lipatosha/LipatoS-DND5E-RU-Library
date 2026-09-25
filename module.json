@@ -2,7 +2,6 @@
   "id": "lipatos-dnd5e-ru-library",
   "title": "LipatoS — DND5E RU Library",
   "description": "Русскоязычная библиотека D&D 5e Legacy 2014 для Foundry VTT 14. Базовый контент собирается из Laaru DnD14 v3.72.5 без зависимости от установленного модуля Laaru.",
-  "version": "1.0.6",
   "authors": [
     {
       "name": "LipatoS",
@@ -10,13 +9,473 @@
     }
   ],
   "url": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library",
-  "manifest": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library/releases/latest/download/module.json",
-  "download": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library/releases/latest/download/lipatos-dnd5e-ru-library.zip",
+  "version": "1.0.6",
   "compatibility": {
     "minimum": "14",
     "verified": "14",
     "maximum": "14"
   },
+  "esmodules": [
+    "scripts/source-packs.js"
+  ],
+  "packFolders": [
+    {
+      "name": "LipatoS — DND5E RU Library",
+      "sorting": "m",
+      "color": "#5b21b6",
+      "folders": [
+        {
+          "name": "Игроку",
+          "sorting": "m",
+          "color": "#0F2C22",
+          "folders": [
+            {
+              "name": "Классы",
+              "sorting": "m",
+              "color": "#184737",
+              "packs": [
+                "classes",
+                "classfeatures",
+                "subclasses"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Расы",
+              "sorting": "m",
+              "color": "#21634C",
+              "packs": [
+                "races",
+                "racesMPMM"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Происхождения",
+              "sorting": "m",
+              "color": "#2A7F61",
+              "packs": [
+                "backgrounds",
+                "tables"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Заклинания",
+              "sorting": "m",
+              "color": "#329B77",
+              "packs": [
+                "spells"
+              ],
+              "folders": []
+            }
+          ],
+          "packs": []
+        },
+        {
+          "name": "Мастеру",
+          "sorting": "m",
+          "color": "#3F2116",
+          "folders": [
+            {
+              "name": "Чудовища",
+              "sorting": "m",
+              "color": "#5B2F1F",
+              "packs": [
+                "monsters",
+                "monsters2"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Справочники",
+              "sorting": "m",
+              "color": "#763D28",
+              "packs": [
+                "intro",
+                "list"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Предметы и Товары",
+              "sorting": "m",
+              "color": "#924A31",
+              "packs": [
+                "items",
+                "goods"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Макросы",
+              "sorting": "m",
+              "color": "#AE5839",
+              "packs": [
+                "macro"
+              ],
+              "folders": []
+            }
+          ],
+          "packs": []
+        },
+        {
+          "name": "Дополнительно",
+          "sorting": "m",
+          "color": "#111B30",
+          "folders": [
+            {
+              "name": "Состояния",
+              "sorting": "m",
+              "color": "#1A2B4B",
+              "packs": [
+                "conditions"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Действия",
+              "sorting": "m",
+              "color": "#233A66",
+              "packs": [
+                "actions"
+              ],
+              "folders": []
+            },
+            {
+              "name": "Прочие таблицы",
+              "sorting": "m",
+              "color": "#2C4982",
+              "packs": [
+                "tables-extra"
+              ],
+              "folders": []
+            }
+          ],
+          "packs": []
+        }
+      ],
+      "packs": []
+    }
+  ],
+  "packs": [
+    {
+      "name": "backgrounds",
+      "label": "# Происхождения",
+      "path": "packs/backgrounds",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_back.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "background",
+            "feat"
+          ]
+        }
+      }
+    },
+    {
+      "name": "classes",
+      "label": "# Классы",
+      "path": "packs/classes",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_classes.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "class"
+          ]
+        }
+      }
+    },
+    {
+      "name": "subclasses",
+      "label": "# Подклассы",
+      "path": "packs/subclasses",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_subclasses.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "subclass"
+          ]
+        }
+      }
+    },
+    {
+      "name": "classfeatures",
+      "label": "# Особенности",
+      "path": "packs/classfeatures",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_features.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "feat"
+          ]
+        }
+      }
+    },
+    {
+      "name": "races",
+      "label": "# Расы",
+      "path": "packs/races",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_races.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "race",
+            "feat"
+          ]
+        }
+      }
+    },
+    {
+      "name": "racesMPMM",
+      "label": "# Расы — вариативные",
+      "path": "packs/racesmpmm",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_races1.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "race",
+            "feat"
+          ]
+        }
+      }
+    },
+    {
+      "name": "actions",
+      "label": "# Действия",
+      "path": "packs/actions",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner.webp",
+      "flags": {}
+    },
+    {
+      "name": "conditions",
+      "label": "# Состояния",
+      "path": "packs/conditions",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner.webp",
+      "flags": {}
+    },
+    {
+      "name": "spells",
+      "label": "# Заклинания",
+      "path": "packs/spells",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_spell.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "spell"
+          ]
+        }
+      }
+    },
+    {
+      "name": "monsters",
+      "label": "# Чудовища том 1",
+      "path": "packs/monsters",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_monsters.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "npc"
+          ]
+        }
+      }
+    },
+    {
+      "name": "monsters2",
+      "label": "# Чудовища том 2",
+      "path": "packs/monsters2",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_monsters1.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "npc"
+          ]
+        }
+      }
+    },
+    {
+      "name": "intro",
+      "label": "# Справочник",
+      "path": "packs/intro",
+      "type": "JournalEntry",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_intro.webp",
+      "flags": {}
+    },
+    {
+      "name": "list",
+      "label": "# Контент из книг",
+      "path": "packs/list",
+      "type": "JournalEntry",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_intro.webp",
+      "flags": {
+        "display": "table-of-contents"
+      }
+    },
+    {
+      "name": "items",
+      "label": "# Предметы",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_item.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "weapon",
+            "equipment",
+            "consumable",
+            "tool",
+            "loot",
+            "container"
+          ]
+        }
+      }
+    },
+    {
+      "name": "goods",
+      "label": "# Товары",
+      "path": "packs/goods",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_goods.webp",
+      "flags": {
+        "dnd5e": {
+          "types": [
+            "consumable",
+            "tool",
+            "loot",
+            "container"
+          ]
+        }
+      }
+    },
+    {
+      "name": "tables-extra",
+      "label": "# Дополнительные таблицы",
+      "path": "packs/tables-extra",
+      "type": "RollTable",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_tables.webp",
+      "flags": {}
+    },
+    {
+      "name": "tables",
+      "label": "# Таблицы происхождений",
+      "path": "packs/tables",
+      "type": "RollTable",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner_tables.webp",
+      "flags": {}
+    },
+    {
+      "name": "macro",
+      "label": "# Полезные макросы",
+      "path": "packs/macro",
+      "type": "Macro",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "banner": "https://raw.githubusercontent.com/laaruk/images/main/pic/Banner.webp",
+      "flags": {}
+    }
+  ],
   "relationships": {
     "systems": [
       {
@@ -29,12 +488,44 @@
       }
     ]
   },
+  "media": [
+    {
+      "type": "setup",
+      "thumbnail": "https://raw.githubusercontent.com/laaruk/images/main/pic/media.webp"
+    }
+  ],
   "flags": {
+    "dnd5e": {
+      "spellLists": [
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.0xtNgHu3sNwPjAo2.JournalEntryPage.HcjaBMOp1oibHFJ5",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.FAQcdHUHuzDnACzv.JournalEntryPage.KGGROgBLfNz9TG07",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.lCYkxlFlkhxLEVLw.JournalEntryPage.d4oEMYrCFjHPK4gQ",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.eW9JrercncRKlrgN.JournalEntryPage.nf0t6MJ3sozKOb1B",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.FiULx6TITbFSZV5H.JournalEntryPage.D6MkCDcLQTznWcyx",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.DgROefUiG5ksXkfi.JournalEntryPage.Tj4WDlR23lFeqDIB",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.87CT23KPpDRMdEft.JournalEntryPage.J8Hn1pJXYKmdX0v6",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.glQ4JnErUMIbcRm8.JournalEntryPage.UbcWYFZGqLYLqrOv",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.jj3ixZhtsJUCHuc5.JournalEntryPage.xtC5ODlXTJeA7DK6",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.QDBBn2obtr4g0cpP.JournalEntryPage.7OVcL9c9rNoYHAXP",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.CQLS6mRFcjI5DyiV.JournalEntryPage.gQTP0k3Y9EGSZJcY",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.WmgUm46cfdnhRvsu.JournalEntryPage.aBGjsZQ7vIiZGEfS",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.ESLU9S5giyTnhSKo.JournalEntryPage.Fb9egAUnq3cVrv19",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.sGpebp9eldkzdlzi.JournalEntryPage.UeNbL8UVjdYDeXUw",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.AveJ6qJtZlGjow8w.JournalEntryPage.j5myUQtScfRIENbO",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.tiAhM0N4KVrLUHIm.JournalEntryPage.rvw2vOEcPE0BmNMB",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.WAln89xNDd4oCaCT.JournalEntryPage.UM4O0xGQAC8HeAm7",
+        "Compendium.lipatos-dnd5e-ru-library.intro.JournalEntry.km2G72eCNVFyCNjU.JournalEntryPage.o6YSkrRq1YSjdOGM"
+      ]
+    },
     "lipatos": {
       "rules": "2014",
       "source": "Laaru DnD14",
       "sourceVersion": "3.72.5",
-      "stage": "laaru-baseline-class-pictures"
+      "sourceModuleId": "laaru-dnd5-hw",
+      "buildMode": "full-mirror",
+      "classUiSet": 13
     }
-  }
+  },
+  "manifest": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library/releases/latest/download/module.json",
+  "download": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library/releases/latest/download/lipatos-dnd5e-ru-library.zip"
 }
