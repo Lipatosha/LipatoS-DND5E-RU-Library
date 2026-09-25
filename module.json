@@ -1,7 +1,7 @@
 {
   "id": "lipatos-dnd5e-ru-library",
   "title": "LipatoS — DND5E RU Library",
-  "description": "Русскоязычная библиотека D&D 5e Legacy 2014 для Foundry VTT 14. Базовый контент собирается из Laaru DnD14 v3.72.5 без зависимости от установленного модуля Laaru.",
+  "description": "Русскоязычная библиотека D&D 5e Legacy 2014 для Foundry VTT 14.",
   "authors": [
     {
       "name": "LipatoS",
@@ -9,7 +9,7 @@
     }
   ],
   "url": "https://github.com/Lipatosha/LipatoS-DND5E-RU-Library",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "compatibility": {
     "minimum": "14",
     "verified": "14",
@@ -519,10 +519,6 @@
     },
     "lipatos": {
       "rules": "2014",
-      "source": "Laaru DnD14",
-      "sourceVersion": "3.72.5",
-      "sourceModuleId": "laaru-dnd5-hw",
-      "buildMode": "full-mirror",
       "classUiSet": 13
     }
   },
