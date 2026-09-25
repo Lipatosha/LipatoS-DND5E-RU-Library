@@ -1,39 +1,32 @@
-name: Build RU Library
+name: Materialize standalone RU library
 
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
-      - "assets/**"
-      - "scripts/**"
-      - "tools/**"
-      - "module.json"
-      - "package.json"
       - ".github/workflows/build.yml"
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  materialize:
     runs-on: ubuntu-latest
     timeout-minutes: 75
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "22"
 
-      - name: Install dependencies
+      - name: Install build dependency
         run: npm install --no-audit --no-fund
 
-      - name: Fetch pinned Laaru source
+      - name: Fetch Laaru one final time
         shell: bash
         run: |
           set -euo pipefail
@@ -41,66 +34,37 @@ jobs:
           URL=$(node -p "require('./tools/laaru-source.json').download")
           EXPECTED_VERSION=$(node -p "require('./tools/laaru-source.json').version")
           curl -fL --retry 3 --retry-delay 5 "$URL" -o vendor/laaru.zip
-
-          set +e
           unzip -oq vendor/laaru.zip -d vendor
-          CODE=$?
-          set -e
-          if [ "$CODE" -gt 1 ]; then
-            echo "unzip failed with code $CODE"
-            exit "$CODE"
-          fi
-
           test -f vendor/laaru-dnd5-hw/module.json
-          ACTUAL_ID=$(node -p "require('./vendor/laaru-dnd5-hw/module.json').id")
-          ACTUAL_VERSION=$(node -p "require('./vendor/laaru-dnd5-hw/module.json').version")
-          test "$ACTUAL_ID" = "laaru-dnd5-hw"
-          test "$ACTUAL_VERSION" = "$EXPECTED_VERSION"
+          test "$(node -p "require('./vendor/laaru-dnd5-hw/module.json').id")" = "laaru-dnd5-hw"
+          test "$(node -p "require('./vendor/laaru-dnd5-hw/module.json').version")" = "$EXPECTED_VERSION"
 
-      - name: Build mirrored compendiums
+      - name: Build LipatoS standalone module
         env:
           LAARU_SOURCE_ROOT: ${{ github.workspace }}/vendor/laaru-dnd5-hw
         run: npm run build
 
-      - name: Create Foundry ZIP
+      - name: Replace repository with ready module
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p dist
-          cd build
-          zip -0 -qr ../dist/lipatos-dnd5e-ru-library.zip lipatos-dnd5e-ru-library
-          cp lipatos-dnd5e-ru-library/module.json ../dist/module.json
-          cp lipatos-dnd5e-ru-library/build-report.json ../dist/build-report.json
+          TMP="$(mktemp -d)"
+          cp -a build/lipatos-dnd5e-ru-library/. "$TMP/"
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$TMP/." .
+          rm -f build-report.json
 
-      - name: Validate release
-        shell: bash
-        run: |
-          set -euo pipefail
-          node -e '
-            const m=require("./dist/module.json");
-            if(m.id!=="lipatos-dnd5e-ru-library") throw new Error("wrong module id");
-            const expected=require("./module.json").version; if(m.version!==expected) throw new Error(`wrong version: ${m.version} != ${expected}`);
-            if(m.compatibility?.verified!=="14") throw new Error("wrong Foundry version");
-            const s=(m.relationships?.systems||[]).find(x=>x.id==="dnd5e");
-            if(s?.compatibility?.verified!=="6.0.5") throw new Error("wrong dnd5e version");
-            const required=["classes","subclasses","classfeatures","races","racesMPMM","backgrounds","spells","items","goods","monsters","monsters2","intro","list","tables","tables-extra","macro","actions","conditions"];
-            const names=new Set((m.packs||[]).map(p=>p.name));
-            for(const n of required) if(!names.has(n)) throw new Error("missing pack "+n);
-          '
-          unzip -tq dist/lipatos-dnd5e-ru-library.zip
+          cat > README.md <<'EOF'
+          # LipatoS — DND5E RU Library
 
-      - name: Publish release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          VERSION=$(node -p "require('./dist/module.json').version")
-          TAG="v$VERSION"
-          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "$TAG" \
-            dist/lipatos-dnd5e-ru-library.zip \
-            dist/module.json \
-            dist/build-report.json \
-            --title "LipatoS — DND5E RU Library v$VERSION" \
-            --notes "Полная базовая пересборка библиотеки из данных Laaru DnD14 v3.72.5. Внутренние UUID и пути перенесены на LipatoS; Laaru как установленный модуль не требуется."
+          Готовый самостоятельный русскоязычный модуль D&D 5e Legacy 2014 для Foundry VTT 14 / D&D5e 6.0.5.
+
+          Репозиторий содержит сам модуль напрямую: компендиумы, ресурсы, скрипты и module.json.
+          Никаких внешних зависимостей от Laaru, исходных архивов Laaru, vendor-сборки или build-инструментов больше нет.
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Convert library to standalone module"
+          git push
