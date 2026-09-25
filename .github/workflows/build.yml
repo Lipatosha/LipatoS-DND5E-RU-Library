@@ -34,7 +34,11 @@ jobs:
           URL=$(node -p "require('./tools/laaru-source.json').download")
           EXPECTED_VERSION=$(node -p "require('./tools/laaru-source.json').version")
           curl -fL --retry 3 --retry-delay 5 "$URL" -o vendor/laaru.zip
+          set +e
           unzip -oq vendor/laaru.zip -d vendor
+          CODE=$?
+          set -e
+          if [ "$CODE" -gt 1 ]; then exit "$CODE"; fi
           test -f vendor/laaru-dnd5-hw/module.json
           test "$(node -p "require('./vendor/laaru-dnd5-hw/module.json').id")" = "laaru-dnd5-hw"
           test "$(node -p "require('./vendor/laaru-dnd5-hw/module.json').version")" = "$EXPECTED_VERSION"
