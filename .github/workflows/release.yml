@@ -1,0 +1,39 @@
+name: Release module
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/release.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read version
+        id: version
+        shell: bash
+        run: echo "version=$(jq -r .version module.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Build module archive
+        shell: bash
+        run: |
+          zip -qr lipatos-dnd5e-ru-library.zip module.json README.md scripts packs assets
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        shell: bash
+        run: |
+          gh release create "v$VERSION" \
+            module.json \
+            lipatos-dnd5e-ru-library.zip \
+            --target "$GITHUB_SHA" \
+            --title "LipatoS — DND5E RU Library v$VERSION" \
+            --notes "Новые изображения и иконки 13 классов. Пути классов переведены на assets/images/classes и assets/icons/classes."
